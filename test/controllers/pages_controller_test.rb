@@ -1,8 +1,8 @@
 require 'test_helper'
 
-class PagesControllerTest < ActionDispatch::IntegrationTest
+class ContactsControllerTest < ActionDispatch::IntegrationTest
   test "should get form" do
-    get pages_form_url
+    get contacts_form_url
     assert_response :success
   end
 

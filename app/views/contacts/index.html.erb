@@ -1,0 +1,14 @@
+<h1>Form page</h1>
+<p> Now is <%= Time.now %> </p>
+
+<%= render 'form', contact: @contact %>
+
+<% @contacts.each do |contact| %>
+  <p>
+  <%= link_to "🖱️", edit_path(contact.id), method: :edit, data:{ confirm: " Update #{contact.first_name} #{contact.last_name}?"} %>
+  <%= contact.first_name %> - 
+  <%= contact.last_name %> 
+  [<%= contact.created_at %>]
+  <%= link_to "🗑️", destroy_path(contact.id), method: :delete, data:{ confirm: " Delete #{contact.first_name} #{contact.last_name}?"} %>
+  </p>
+<% end %>
